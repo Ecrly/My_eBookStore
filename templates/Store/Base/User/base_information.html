@@ -1,0 +1,29 @@
+
+        <div class="list-group">
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading" >书名</h4>
+{#                <p class="list-group-item-text">{{ elem.name }}</p>#}
+                <input type="text" class="form-control" value="{{ elem.name }}">
+            </a>
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">电话</h4>
+                <input type="text" class="form-control" value="{{ elem.tel }}">
+            </a>
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">地址</h4>
+                <input type="text" class="form-control" value="{{ elem.address }}">
+            </a>
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">密码</h4>
+                <input type="text" class="form-control" value="{{ elem.password }}">
+            </a>
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">确认密码</h4>
+                <input type="text" class="form-control" value="{{ elem.password }}">
+            </a>
+            <div class="list-group-item">
+                <div class="col-lg-8"></div>
+                <div class="col-lg-2"><input type="button" class="btn btn-primary add" value="添加到购物车" id="add"></div>
+                <a href="#buy" data-toggle="modal" id ="submit_buy"><input type="button" class="btn btn-primary buy" value="购买" ></a>
+            </div>
+        </div>

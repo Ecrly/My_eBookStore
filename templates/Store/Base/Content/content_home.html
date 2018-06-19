@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    $(document).ready(function(e) {
+        $('.text1').typetype('也许你会笑我傻笑我笨，世界上美好的东西多得是，干嘛为了一本书而沉醉？而我会毫不犹豫的告诉你，我爱书，我就是爱书。以至于只要沉醉在书海的世界里，我就身不由己，不由自主的陷进了这个世界。' +
+            '多读书，可以与主人公卑可怜之人，笑可鄙之士。读书是超越时空间的邂逅。你会感受李白攀登天姥峰的潇洒；杜甫登临五岳一览众山小的壮志；李清照在莲花池中争度的轻快；徐志摩再别康桥的不舍之情……你会和托尔斯泰感受老婆婆向金鱼永无休止的贪婪；你会与孔子一起因材施教；你会与鲁迅先生一起在夕阳落日时拾捡朝花，共同回忆那美好的童年；你也许会与海伦凯乐一起失去光明，面临黑暗，去感受那份渴望……');
+    });
+</script>
+{% extends 'Store/Base/Content/base_content.html' %}
+{% block page_id %}"home"{% endblock %}
+{% block left %}
+    <div class="col-lg-6">
+    </div>
+{% endblock %}
+{% block right %}
+    <div class="text1" style="font-family: 楷体; font-size: large"></div>
+    <div class="text2" style="font-family: 楷体; font-size: large"></div>
+{% endblock %}

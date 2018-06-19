@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="/static/js/jquery-3.2.1.js"></script>
+<link type="text/css" href="/static/css/head_css.css" rel="stylesheet" >
+<link type="text/css" href="/static/css/bootstrap.css" rel="stylesheet" >
+<link type="text/css" href="/static/css/bootstrap-theme.css" rel="stylesheet" >
+<link type="text/css" href="/static/css/BootSideMenu.css" rel="stylesheet" >
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/BootSideMenu.js"></script>
+<script src="/static/js/login_regist_check_js.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/js/content_js.js"></script>
+<script type="text/javascript" src="/static/js/Ajax_table.js"></script>
+<script type="text/javascript" src="/static/js/jquery.typetype.min.js"></script>
+{#wangzhi#}
+{#	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>#}
+{#	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+<script>
+    $(document).ready(function(e) {
+        $.post('/test/',function (ret) {
+            //alert(ret);
+            if(ret =='False')
+            {
+                $(".after_login").css("display","none");
+                $(".before_login").css("display","block");
+            }
+            else
+            {
+                $(".after_login").css("display","block");
+                $(".before_login").css("display","none");
+                $(".user_name_after_login").html(ret);
+            }
+        })
+        $(".zhuye").click();
+    });
+</script>
+<body>
+
+    <div class="container-fluid">
+        <div class="nav navbar-default navbar-fixed-top" role="navigation">
+            {#            logo 左半部分#}
+            <div class="head_left col-lg-3">
+                <ul class="nav navbar-nav ">
+                       <li><a><span class="glyphicon glyphicon-book"></span> My_BookStore</a></li>
+                </ul>
+            </div>
+            {#            右半部分：包括导航(登录，注册，管理)搜索框#}
+            <div class="head_right col-lg-5">
+                {#                    搜索框#}
+                  <div>
+                    <div class="navbar-form navbar-left" role="search" id="myTab">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search" style="width: 300px" id ="search_name">
+                        </div>
+                        <a  href="#search_result" data-toggle="tab" id="search"><input type="button" class="btn btn-default"  value="搜索"></a>
+                    </div>
+                </div>
+            </div>
+                 {#            导航#}
+            <div class="head_right col-lg-4">
+                <div>
+                    <ul class="nav navbar-nav " id="myTab">
+                        <li ><a href="#home" data-toggle="tab" class="zhuye">主页</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                书
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#books_of_computer" data-toggle="tab" id="computer">计算机</a></li>
+                                <li><a href="#books_of_english" data-toggle="tab" id="english">英语</a></li>
+                                <li><a href="#books_of_others" data-toggle="tab" id="others">其他</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                功能
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#contents_of_news" data-toggle="tab" id="news">最新动态</a></li>
+                                <li><a href="#" data-toggle="tab">留言求书</a></li>
+                                <li><a href="#" data-toggle="tab">敬请期待</a></li>
+                            </ul>
+                        </li>
+                        <li class="before_login"><a href="#regist" role="button" class="btn" data-toggle="modal"><span class="glyphicon glyphicon-user"></span> <span>注册</span></a></li>
+
+                        <li class="before_login"><a href="#login" role="button" class="btn" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+
+                        <li class="after_login" style="display: none">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="user_name_after_login"></span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#user_information" data-toggle="tab" id = "information">个人信息</a></li>
+                                <li><a href="#" data-toggle="tab">订单</a></li>
+                                <li><a href="#" data-toggle="tab">购物车</a></li>
+                                <li id = "logout"><a href="#" data-toggle="tab">注销</a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="/admin/" target="_blank"><span class="glyphicon glyphicon-cog"></span> 管理</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+{#        #}
+        {% include 'Store/Base/User/regist.html' %}
+         {% include 'Store/Base/User/login.html' %}
+    </div>
+
+</body>
+</html>

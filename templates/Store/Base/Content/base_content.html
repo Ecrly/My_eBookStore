@@ -1,0 +1,19 @@
+ <div class="tab-pane fade" id={% block page_id %}{% endblock %}>
+     <div class="row">
+     {% block left %}
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                    <div class="panel-body" style="">
+                        <div class={% block class %}{% endblock %}>
+                            <div> </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+     {% endblock %}
+        <div class="col-lg-6">
+            {% block right %}
+            {% endblock %}
+        </div>
+    </div>
+ </div>

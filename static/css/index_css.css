@@ -1,0 +1,184 @@
+    *
+	{
+		margin: 0;
+		padding:0;
+	}
+	.top
+	{
+		height: 30px;
+		width: 100%;
+		background-color:#F9F9F9;
+	}
+	.head
+	{
+		height:150px;
+		width:100%;
+		line-height:50px;
+		text-align:center;
+		display:flex;
+		justify-content:space-between;
+		border:solid;
+		border-width:0 0 3px 0;
+		border-color:#F00;
+	}
+	.logo
+	{
+		margin-top:25px;
+		margin-left:200px;
+		font-size:24px;
+		color:#F00;
+	}
+	.search
+	{
+		margin-top:50px;
+		margin-right:200px;
+	}
+	.manage
+	{
+
+	}
+    .text
+	{
+		width:400px;
+		height:40px;
+		border-style:solid;
+		border-width:3px;
+		border-color: #F00;
+		padding-left: 7px;
+	}
+	.submit
+	{
+		width:80px;
+		height:45px;
+		background-color:#F00;
+		border:none;
+		color:#FFF;
+		font-size:18px;
+	}
+	.main2
+	{
+		display: none;
+		width: 80vw;
+		background-color: #FFF;
+		margin-left: 10vw;
+		height: 80vh;
+		border:solid;
+		border-width: 0 3px 3px 3px;
+		border-color: #FF0000;
+	}
+	.title span
+	{
+		margin-left: 50px;
+		font-family: 楷体;
+		font-size: large;
+		color: coral;
+	}
+	.return
+	{
+		float: right;
+		margin-right: 10px;
+		width: 50px;
+		height:30px;
+	}
+	.result
+	{
+
+	}
+	.main
+	{
+        width: 100%;
+		height:80vh;
+        display: flex;
+	}
+	.left
+	{
+		display: flex;
+		flex-direction: row;
+		height:80vh;
+		background-color: antiquewhite;
+		margin-left: 10vw;
+		/*overflow: hidden;*/
+	}
+	.menu
+	{
+		height: 400px;
+		width:10vw;
+	}
+	.content
+	{
+		position:relative;
+		left: -2px;
+		box-sizing: border-box;
+		z-index: 2;
+		background-color: white;
+
+	}
+	.en
+	{
+		border: solid;
+		border-width: 1px;
+	}
+	.en td
+	{
+		height:50px;
+	}
+
+	.content ul li
+	{
+		border: solid red;
+		border-width: 2px;
+		width: 60vw;
+		height:400px;
+		display: none;
+	}
+	.left ul
+	{
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+	.left li
+	{
+		padding: 0;
+		margin:0;
+		height:80px;
+		text-align:center;
+		line-height: 80px;
+	}
+	.add_to_li
+	{
+		border: solid;
+		border-width: 2px;
+		border-right: hidden;
+		box-sizing: border-box;
+		border-color: #FF0000;
+		position: relative;
+		z-index: 1000;
+		background-color: #F9F9F9;
+	}
+	.mid
+	{
+        width: 100%;
+        height:80vh;
+		background-color: #F9F9F9;
+	}
+	.img
+	{
+		width:100%;
+		height:40vh;
+		background-color: aquamarine;
+		overflow: hidden;
+	}
+	.show
+	{
+		width:100%;
+		height:40vh;
+		background-color: aliceblue;
+	}
+	.right
+	{
+		width:15vw;
+        height:80vh;
+        background-color: darkgray;
+		margin-right: 10vw;
+	}

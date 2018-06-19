@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="/static/js/jquery-3.2.1.js"></script>
+<link type="text/css" href="/static/css/head_css.css" rel="stylesheet" >
+<link type="text/css" href="/static/css/bootstrap.css" rel="stylesheet" >
+<link type="text/css" href="/static/css/bootstrap-theme.css" rel="stylesheet" >
+<link type="text/css" href="/static/css/BootSideMenu.css" rel="stylesheet" >
+<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/js/BootSideMenu.js"></script>
+<script src="/static/js/login_regist_check_js.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/js/content_js.js"></script>
+<script type="text/javascript" src="/static/js/Ajax_table.js"></script>
+<script type="text/javascript" src="/static/js/buy_add_check_js.js"></script>
+<script>
+
+</script>
+<body style="padding-top: 80px">
+    <div class="container-fluid">
+        <div class="nav navbar-default navbar-fixed-top" role="navigation">
+            <div class="head_left col-lg-3">
+                <ul class="nav navbar-nav ">
+                       <li><a href="#home"><span class="glyphicon glyphicon-book"></span> My_BookStore</a></li>
+                </ul>
+            </div>
+            <div class="head_right col-lg-9">
+                <div>
+                    <ul class="nav navbar-nav " id="myTab">
+                        <li class="before_login"><a href="#regist" role="button" class="btn" data-toggle="modal"><span class="glyphicon glyphicon-user"></span> <span>注册</span></a></li>
+                        <li class="before_login"><a href="#login" role="button" class="btn" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                        <li class="after_login" style="display: none">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="user_name_after_login"></span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" data-toggle="tab">个人信息</a></li>
+                                <li><a href="#" data-toggle="tab">订单</a></li>
+                                <li><a href="#" data-toggle="tab">购物车</a></li>
+                                <li id = "logout"><a href="#" data-toggle="tab">注销</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        {% include 'Store/Base/User/regist.html' %}
+         {% include 'Store/Base/User/login.html' %}
+    </div>
+    <div class="container">
+        <div class="list-group">
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading" >书名</h4>
+                <p class="list-group-item-text" id = "buy_book">{{ elem.book_name }}</p>
+            </a>
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">作者</h4>
+                <p class="list-group-item-text">{{ elem.author }}</p>
+            </a>
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">价格</h4>
+                <p class="list-group-item-text" id="buy_price">{{ elem.price }}元</p>
+            </a>
+            <a class="list-group-item">
+                <h4 class="list-group-item-heading">简介</h4>
+                <p class="list-group-item-text">{{ elem.abstract }}</p>
+            </a>
+             <a class="list-group-item">
+                <h4 class="list-group-item-heading">库存</h4>
+                <p class="list-group-item-text">{{ elem.stock }}本</p>
+            </a>
+             <a class="list-group-item">
+                <h4 class="list-group-item-heading">销量</h4>
+                <p class="list-group-item-text">{{ elem.solid }}本</p>
+            </a>
+            <div class="list-group-item">
+                <div class="col-lg-8"></div>
+                <div class="col-lg-2"><input type="button" class="btn btn-primary add" value="添加到购物车" id="add"></div>
+                <a href="#buy" data-toggle="modal" id ="submit_buy"><input type="button" class="btn btn-primary buy" value="购买" ></a>
+            </div>
+        </div>
+    </div>
+<div class="modal fade" id="buy" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel">
+                                                请检查您的信息
+                                            </h4>
+                                        </div>
+                                        <form role="form">
+                                        <div class="modal-body">
+
+                                        </div>
+                                        <div class="modal-footer">
+                                             <input type="button" class="btn btn-primary submit" value="确认" id="submit_confirm">
+                                             <button type="button" class="btn btn-default" data-dismiss="modal" id = "close_confirm">关闭</button>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+</body>
+</html>
